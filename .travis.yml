@@ -14,3 +14,4 @@ script:
   - mix test
   - dialyzer --no_check_plt --plt $PLT_LOCATION --no_native _build/test/lib/mt940/ebin
 after_success: "mix do compile, coveralls.travis"
+
