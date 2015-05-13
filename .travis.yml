@@ -3,6 +3,7 @@ elixir:
     - 1.0.4
 otp_release:
     - 17.3
+sudo: true
 before_script:
   # Set download location
   - export PLT_FILENAME=elixir-${TRAVIS_ELIXIR_VERSION}_${TRAVIS_OTP_RELEASE}.plt
@@ -14,4 +15,3 @@ script:
   - mix test
   - dialyzer --no_check_plt --plt $PLT_LOCATION --no_native _build/test/lib/mt940/ebin
 after_success: "mix do compile, coveralls.travis"
-
