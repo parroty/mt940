@@ -14,4 +14,4 @@ before_script:
 script:
   - mix test
   - dialyzer --no_check_plt --plt $PLT_LOCATION --no_native _build/test/lib/mt940/ebin
-after_success: "mix do compile, coveralls.travis"
+after_success: "MIX_ENV=test mix do deps.get, compile, coveralls.travis"
